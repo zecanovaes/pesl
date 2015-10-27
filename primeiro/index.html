@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Projeto EDUCAÇÃO EM SOFTWARE LIVRE</title>
+</head>
+<style>
+#bg1 {
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	position:absolute;
+	overflow:hidden;
+	background-color:#FFFFFF;
+
+}
+#bar2, #bar3{
+	width:0%;
+	height:30%;
+	background-color:#FFFFFF;
+	background-repeat:repeat;
+	background-image:url(bg.png);
+	background-size: 10vw;
+	position:absolute;
+	animation-name: topo;
+	animation-delay: 18s;
+}
+#bar2{ top:0; left:0; background-position:left;}
+#bar3{ bottom:0; right:0; background-position:right;}
+#bar1 {
+	background-color:#8DB372;
+	width:100%;
+	left:0;
+	bottom:0%;
+	top:0%;
+	position:absolute;
+	overflow:hidden;
+}
+#bgw, #bar2, #bar3 {
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode:forwards;
+}
+#bar1 {
+	animation-name: changeposition, bar1bg;
+    animation-duration: 1s, 1s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: 7s, 18s;
+	animation-fill-mode:forwards, forwards;
+	animation-iteration-count: 1, 1;
+}
+
+@keyframes changeposition {
+    from {
+    top: 0%;
+    bottom: 0%;
+}
+   to {
+    top: 30%;
+    bottom: 30%;
+
+}
+}
+#pesl, #unifesp, #bgw, #acessar {
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+	top:7%;
+	bottom:7%;
+	position:absolute;
+	right:7%;
+	left:7%;
+}
+#pesl {
+	background-image:url(pesl.png);
+	transform: translate(0%, -120%);
+	animation-name: pesl, pesl2;
+    animation-duration: 1s, 1s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: 10s, 14s;
+	animation-fill-mode:forwards, forwards;
+	animation-iteration-count: 1, 1;
+
+}
+#unifesp {
+	background-image:url(unifesp.png);
+	transform: translate(0%, -120%);
+	animation-name: unifesp, unifesp2;
+    animation-duration: 1s, 1s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: 14s, 18s;
+	animation-fill-mode:forwards, forwards;
+	animation-iteration-count: 1, 1;
+}
+#acessar {
+	background-image:url(acessar.png);
+	transform: translate(0%, -120%);
+	animation-name: acessar;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 18s;
+	animation-fill-mode:forwards;
+	animation-iteration-count: 1;
+}
+#bgw {
+	background-image:url(bgw.png);
+	transform: translate(0%, 0%);
+	animation-name: bgw;
+	animation-delay: 10s;
+}
+
+@keyframes bar1bg {
+    from {
+	background-color:#8DB372;
+}
+   to {
+	background-color:#2C4639;
+}
+}
+
+@keyframes pesl {
+    from {
+	transform: translate(0%, -120%);
+}
+   to {
+	transform: translate(0%, 0%);
+}
+}
+@keyframes pesl2 {
+   from {
+	transform: translate(0%, 0%);
+}
+   to {
+	transform: translate(0%, 120%);
+}
+}
+@keyframes unifesp {
+    from {
+	transform: translate(0%, -120%);
+}
+   to {
+	transform: translate(0%, 0%);
+}
+}
+@keyframes unifesp2 {
+    from {
+	transform: translate(0%, 0%);
+}
+   to {
+	transform: translate(0%, 120%);
+}
+}
+@keyframes acessar {
+    from {
+	transform: translate(0%, -120%);
+	}
+   to {
+	transform: translate(0%, 0%);
+}
+}
+@keyframes bgw {
+    from {
+	transform: translate(0%, 0%);
+}
+   to {
+	transform: translate(0%, 120%);
+}
+}
+
+@keyframes topo {
+    from {
+	width: 0%;
+}
+   to {
+	width: 100%;
+}
+}
+</style>
+<body>
+
+<div id="bg1">
+<audio controls="controls" autoplay style="display:none">
+  <source src="bell.ogg" type="audio/ogg" />
+  <source src="bell.mp3" type="audio/mp3" />
+</audio>
+
+<div id="bar2"></div><div id="bar3"></div>
+<div id="bar1"><div id="bgw"></div><div id="pesl"></div><div id="unifesp"></div><a href="#"><div id="acessar"></div></a>
+</div>
+</div>
+</body>
+</html>

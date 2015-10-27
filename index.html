@@ -1,0 +1,920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PESL - Programa de Educação em Software Livre</title>
+<link rel="apple-touch-icon" sizes="57x57" href="icos/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="icos/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icos/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="icos/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icos/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icos/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icos/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icos/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icos/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="icos/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="icos/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="icos/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="icos/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="icos/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<style>
+body {
+	background-color:#FFFFFF;
+	-webkit-overflow-scrolling:touch;
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+	-webkit-tap-highlight-color: transparent;
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	position:absolute;
+	margin-top:0;
+	margin-left:0;
+	min-height:40vw;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+.rec {
+	position: absolute;
+	background-image:url(rec.png);
+	background-position:top;
+	background-repeat:no-repeat;
+	background-size:contain;
+	width: 74%;
+	padding-bottom: 20%;
+	top:-100%;
+	right:13%;
+	animation-duration: 2s;
+	animation-name: changeposition;
+	animation-iteration-count: initial;
+	animation-direction: normal;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.4s;
+	animation-fill-mode:forwards;
+}
+
+.func {
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:#FFFFFF;
+	top:0;
+	left:0;
+	opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.cont {
+	width:40%;
+	left: 30%;
+	bottom: 10%;
+	padding-bottom:8%;
+	position:absolute;
+	background-image:url(cont.png);
+	background-position:top;
+	background-repeat:no-repeat;
+	background-size:contain;
+}
+
+@keyframes changeposition {
+    from {
+    top: -100%;
+  }
+   to {
+    top: 15%;
+  }
+}
+
+.inicio, .inscrever, .segundo, .terceiro {
+	position:absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	scroll-behavior: smooth;
+}
+
+.inicio, .segundo, .terceiro {
+	left:0;
+}
+
+.inscrever {
+	right:-100%;
+	background-color:#f26964;
+}
+
+.inscreverg {
+	background-color:#8DB372;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	width:100%;
+	opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+.acin, .inin {
+	position:absolute;
+	padding-bottom: 30%;
+	width:50%;
+	bottom:-30%;
+	overflow:hidden;
+}
+
+.inin {
+	right:8%;
+}
+
+.acin {
+	left:8%;
+}
+
+.in {
+	bottom:40%;
+	width: 100%;
+	position:absolute;
+	height:28%;
+}
+
+.esqinicio:hover .linac, .dirinicio:hover .linin{
+	bottom: 75%;
+}
+
+.in img, .ac img {
+	width:100%;
+	top:0;
+}
+
+.ac {
+	bottom:40%;
+	width: 100%;
+	position:absolute;
+	height:28%;
+}
+
+.linac, .linin {
+	width:100%;
+	height:4%;
+	background-color:#373435;
+	bottom:30%;
+	position:absolute;
+	left:0;
+	animation-duration: 0.3s;
+  animation-name: changebottom;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes changebottom {
+  from {
+    margin-bottom: 3%;
+  }
+
+  to {
+    margin-bottom: 0%;
+  }
+}
+.fundoinicio {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	background-image:url(logo.png);
+	background-size:55%;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.circle {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	background-image:url(circle.png);
+	background-size:54%;
+	background-repeat:no-repeat;
+	background-position:center;
+	animation-duration: 1s;
+	animation-name: rotate;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-timing-function: ease-in-out;
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+from {
+	-ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+to {
+	-ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+}
+}
+
+.esqinicio {
+	position:absolute;
+	width:50%;
+	height:100%;
+	top:0;
+	left:0;
+}
+
+.dirinicio {
+	position:absolute;
+	width:50%;
+	height:100%;
+	top:0;
+	right:0;
+}
+
+.marca {
+	position:fixed;
+	width:2%;
+	padding-bottom:10%;
+	top:2vmin;
+	left:-5vmin;
+	background-position:center;
+	background-image:url(marca.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	display:none;
+}
+
+.mouse {
+	cursor:pointer;
+}
+
+
+.inicio:hover, .inscrever:hover, .segundo:hover, .terceiro:hover, .fundoinicio, .inicio, .in, .ac, .marca, .setesq, .setesq:hover, .linac, .linin, .login, .logo, .logo:hover, .jfk-button2:hover, .jfk-button2, jfk-button:hover, .jfk-button {
+   -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -moz-transition-property:all;
+  -o-transition-property: all;
+  transition-property: all;
+}
+
+.ss-q-title {
+  color: #373435;
+  font-weight: 400;
+  font-size: 2vw;
+  font-style: normal;
+  padding-bottom:3%;
+}
+
+.ss-q-short {
+  font-size: 2vw;
+  width:96%;
+  padding:2%;
+  outline:none;
+  background:#f5f5f5;
+  border-radius:1vmin;
+  margin-bottom:4vmin;
+  border:0.3vmin solid #eee;
+}
+
+.ss-q-short2 {
+  font-size: 2.5vw;
+  width:88%;
+  padding:2%;
+  outline:none;
+	background-color:transparent;
+  border:none;
+  outline:none;
+  color:#FFFFFF;
+  text-align:center;
+}
+
+.ss-q-short2:hover {
+	border:none;
+	outline:none;
+}
+.ss-q-short:focus {
+	box-shadow: 0 0 0.3vmin rgba(55, 70, 45, 0.4);
+}
+
+.opti {
+  font-size: 2vw;
+  width:100%;
+  padding:2%;
+  outline:none;
+  background:#f5f5f5;
+  border-radius:1vmin;
+  margin-bottom:4vmin;
+  border:0.3vmin solid #eee;
+}
+
+.opti:focus {
+	box-shadow: 0 0 0.3vmin rgba(55, 70, 45, 0.4);
+	
+}
+
+.firstel {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background-size:55%;
+	background-repeat:no-repeat;
+	background-position:center;
+	animation-name: changeback;
+	animation-iteration-count: 1;
+	animation-delay: 15s;
+	animation-fill-mode:forwards;
+	opacity: 0.0;
+    filter: alpha(opacity=00);
+	background-image:url(clique.png);
+}
+
+@keyframes changeback {
+    from {
+	opacity: 0.0;
+    filter: alpha(opacity=00);
+  }
+   to {
+	opacity: 1.0;
+    filter: alpha(opacity=100);
+  }
+}
+
+
+.form, .efetuada {
+	font-size:2vw;
+	font-weight:300;
+	color:#373435;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	position:absolute;
+	left:23%;
+	right:23%;
+	top:10%;
+	bottom:10%;
+	border-radius:3vmin;
+	background-color:#FFFFFF;
+	padding-left:3%;
+	padding-right:3%;
+}
+
+.form {
+	box-shadow:2.5vmin 2.5vmin 0vmin rgba(0,0,0,.1);
+
+
+}
+
+.efetuada {
+	background-repeat:no-repeat;
+	background-image:url(inscref.png);
+	background-size:5%;
+	background-position:center;
+	visibility:hidden;
+	opacity: 0.0;
+    filter: alpha(opacity=00);
+}
+
+.efetuada, .inscreverg, .acin, .inin, .func, .formlog, .formlogbgg{
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}
+
+.inscreverg, .acin, .inin, .func {
+	-webkit-transition-property: all;
+	-moz-transition-property:all;
+	-o-transition-property: all;
+	transition-property: all;
+}
+.efetuada  {
+	-webkit-transition-property: background-size, filter, opacity, bottom, transform;
+	-moz-transition-property: background-size, filter, opacity, bottom, transform;
+	-o-transition-property: background-size, filter, opacity, bottom, transform;
+	transition-property: background-size, filter, opacity, bottom, transform;
+}
+.setesq {
+	position:absolute;
+	width:23%;
+	top:0;
+	bottom:0;
+	background-image:url(setesq.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:20%;
+	left:0;
+}
+
+.ballonin {
+	width:100%;
+	height:100%;
+	left:0;
+	background-image:url(ballonset.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: 0%;
+	top:-25%;
+	position:absolute;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-delay: 3s; /* Safari */
+    transition-delay: 3s;
+	-webkit-transition-property: all;
+	-moz-transition-property:all;
+	-o-transition-property: all;
+	transition-property: all;
+}
+.setesq:hover {
+  transform: translate(-3%, 0%);
+}
+
+.jfk-button  {
+	position:absolute;
+	width:40%;
+	padding:3vmin;
+ 	border-radius:1.5vmin;
+	border:0;
+	background:#f26964;
+	font-size:2vw;
+	color:#fff;
+	text-shadow:0.2vmin 0.2vmin 0px rgba(0,0,0,.1);
+	box-shadow:0vmin 0.6min 0vmin #c1524e;
+	margin-bottom:10%;
+	right:30%;
+	outline:none;
+	cursor:pointer;
+}
+
+.jfk-button:hover  {
+	background: #f05752;
+}
+
+.jfk-button2  {
+	position:absolute;
+	width:5%;
+	height:64%;
+	top:18%;
+	right:1%;
+	border:0;
+	background-color:transparent;
+	background-image:url(play.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	outline:none;
+	cursor:pointer;
+}
+
+.formlog:hover .jfk-button2 {
+  transform: translate(10%, 0%);
+}
+
+h1 {
+	font-size:1.5vw;
+	text-align:center;
+}
+
+::-webkit-scrollbar{
+	width: 1.9vmin;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #FFFFFF;
+	visibility:hidden;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #b6cea5;
+	outline: 0.3vmin solid #8DB372;
+	outline-offset: -0.3vmin;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #8DB372;
+}
+
+::selection {
+  background: #EDFCEE; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #EDFCEE; /* Gecko Browsers */
+}
+
+.participar {
+	width:100%;
+	padding-bottom:5%;
+}
+
+.logo {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	transform: translate(0%, 0%);
+}
+.logcen {
+  position:relative;
+
+}
+
+.login {
+	padding-bottom:0%;
+	left:49%;
+	right:49%;
+	position:absolute;
+	top:-60%;
+	background-color:#FFFFFF;
+	border:2vmin solid #000000;
+	border-radius:3vmin;
+	font-size:2vw;
+	font-weight:300;
+	color:#373435;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	box-shadow:2.5vmin 2.5vmin 0vmin rgba(0,0,0,.1);
+	transform: translate(0%, 0%);
+}
+
+
+.contcad {
+	width:90%;
+	left:5%;
+	top:10%;
+	height:30%;
+	background-image:url(contcad.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	position:absolute;
+}
+
+.contmsg {
+	width:90%;
+	left:5%;
+	bottom:3%;
+	height:30%;
+	background-image:url(contmsg.png);
+	background-repeat:no-repeat;
+	background-size:contain;
+	position:absolute;
+}
+
+.exit {
+	width:3%;
+	height:6%;
+	background-image:url(x.png);
+	background-size:contain;
+	position:absolute;
+	background-repeat:no-repeat;
+	right:1%;
+	top:3%;
+}
+
+.blocklog {
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	visibility:hidden;
+	position:absolute;
+}
+
+.formlog, .formlogbgr, .formlogbgg {
+	overflow:hidden;
+	position:absolute;
+	left:5%;
+	height:20%;
+	top:40%;
+}
+.formlogbgr {
+	background:#f26964;
+}
+
+.formlog, .formlogbgr {
+	width:90%;
+}
+
+.formlogbgg {
+	background:#8DB372;
+	width:0%;
+}
+
+#hideAll
+ {
+   position: fixed;
+   left: 0px; 
+   right: 0px; 
+   top: 0px; 
+   bottom: 0px; 
+   background-color: #FFFFFF;
+   z-index: 99;
+
+ }
+
+.scroll {
+	overflow-y:scroll;
+	position:absolute;
+	padding:6%;
+	left:3%;
+	right:3%;
+	top:1%;
+	bottom:1%;
+}
+
+
+#tela, #descetelaf {
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	border:0;
+	outline:0;
+}
+#tela {
+	top:-100%;
+}
+#descetelaf {
+	top:0;
+	visibility:hidden;	
+}
+#forat {
+	position:absolute;
+	width:100%;
+	height:100%;
+	bottom:0;
+	left:0;
+	overflow:hidden;
+	background-repeat:repeat;
+	background-image:url(bg.png);
+	background-size: 10vw;
+}
+#tela, #forat, .inscrever {
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-delay: 4s; /* Safari */
+    transition-delay: 4s;
+  -webkit-transition-property: all;
+  -moz-transition-property:all;
+  -o-transition-property: all;
+  transition-property: all;
+}
+</style>
+ 
+</head>
+
+<body>
+<div id="forat">
+<div class="inicio" id="inicio">
+<div class="logo" id="logo">
+<div class="func" id="func"></div>
+<div class="circle" id="circle"></div>
+<div class="fundoinicio" id="fundoinicio"></div></div>
+
+<a onClick="OpenSel(6)" class="mouse">
+<div class="dirinicio"><div class="inin" id="inin"><div class="linin" id="linin"></div><div class="in" id="in"><img src="in.png" /></div></div></div>
+</a>
+<a onClick="OpenSel(3)" class="mouse">
+<div class="esqinicio" id="esqinicio"><div class="acin" id="acin"><div class="linac" id="linac"></div><div class="ac" id="ac"><img src="ac.png" /></div></div></div>
+</a>
+<a onClick="OpenSel(4)"><div class="blocklog" id="blocklog"> </div></a>
+<div class="login" id="login">
+
+<div class="contcad" id="contcad"></div>
+<div class="formlogbgr" id="formlogbgr"></div>
+<div class="formlogbgg" id="formlogbgg"></div>
+<div class="formlog" id="formlog">
+<iframe name="hidden_iframe2" id="hidden_iframe2"
+style="display:none;" onload="if(submitted) OpenSel(5)"></iframe>
+<form action="https://docs.google.com/forms/d/1mQePk0yD_HNEmdmfqIXQnGvhzA_0iHKEHiM-F8ss8sg/formResponse" method="post"
+target="hidden_iframe2" onsubmit="submitted=true;">
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+
+<input type="text" name="entry.1385196339" autocomplete="off"  value="" class="ss-q-short2" id="entry_1385196339" dir="auto" aria-label="E-mail  " title="">
+</div></div></div>
+<input type="hidden" name="draftResponse" value="[,,&quot;2514834357131424071&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+
+<input type="hidden" name="fvv" value="0">
+
+
+<input type="hidden" name="fbzx" value="2514834357131424071">
+
+
+<input type="submit" name="submit" value="" id="loginsb" class="jfk-button2 jfk-button-action ">
+</form></div>
+
+<div class="contmsg" id="contmsg"></div>
+<a onClick="OpenSel(4)" class="mouse"><div class="exit" id="exit"></div></a>
+
+</div>
+</div>
+
+<a onClick="OpenSel(1)" class="mouse"><div class="firstel" id="firstel"></div></a>
+
+    <div class="marca" id="marca"></div>
+</div>
+<div class="inscrever" id="inscrever">
+<div class="inscreverg" id="inscreverg"></div>
+<a onClick="OpenSel(7)" class="mouse"><div class="setesq" id="setesq"><div class="ballonin" id="ballonin"></div></div></a>
+
+
+<div class="form" id="form">
+
+<div class="scroll">
+<div id="txt">
+<img src="querop.png" / class="participar">
+<h1>*Caso existam dados faltantes, nosso sistema automaticamente eliminará a inscrição.</h1>
+
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe"
+style="display:none;" onload="if(submitted) OpenSel(2)"></iframe>
+<form action="https://docs.google.com/forms/d/1oDsW5ybOYf9cQcyjLszdqXX41mCI9_CN6ZQlc1MMpIU/formResponse" method="post"
+target="hidden_iframe" onsubmit="submitted=true;">
+
+<ol role="list" class="ss-question-list" style="padding-left: 0">
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text">
+<div class="ss-form-entry">
+
+<label class="ss-q-item-label" for="entry_1281221358">
+
+<div class="ss-q-title">Nome</div>
+</label>
+<input type="text" autocomplete="off" name="entry.1281221358" value="" class="ss-q-short" id="entry_1281221358" dir="auto" aria-label="Nome  " title="">
+<div class="error-message" id="986343717_errorMessage"></div>
+</div></div></div>
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text">
+<div class="ss-form-entry">
+
+<label class="ss-q-item-label" for="entry_419945186">
+
+<div class="ss-q-title">E-mail</div>
+</label>
+<input type="text" autocomplete="off" name="entry.419945186" value="" class="ss-q-short" id="entry_419945186" dir="auto" aria-label="E-mail  " title="">
+<div class="error-message" id="1886802668_errorMessage"></div>
+</div></div></div> 
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text">
+<div class="ss-form-entry">
+
+<label class="ss-q-item-label" for="entry_1591128216">
+
+<div class="ss-q-title">Profissão
+</div>
+</label>
+<input type="text" autocomplete="off" name="entry.1591128216" value="" class="ss-q-short" id="entry_1591128216" dir="auto" aria-label="Profissão  " title="">
+<div class="error-message" id="338591715_errorMessage"></div>
+</div></div></div>
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_2126787869"><div class="ss-q-title">Possui vínculo com a Unifesp? Se sim, qual?
+</div>
+</label>
+<input type="text" autocomplete="off" name="entry.2126787869" value="" class="ss-q-short" id="entry_2126787869" dir="auto" aria-label="Possui vínculo com a Unifesp? Se sim, qual?  " title="">
+<div class="error-message" id="1780872479_errorMessage"></div>
+</div></div></div>
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-select"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1031329332"><div class="ss-q-title">Caso seja aluno, em qual curso está matriculado?
+</div>
+</label>
+<select class="opti" autocomplete="off" name="entry.1031329332" id="entry_1031329332" aria-label="Caso seja aluno, em qual curso está matriculado?  "><option value=""></option>
+<option value="Administra&ccedil;&atilde;o">Administração</option> <option value="Ci&ecirc;ncias Atuariais">Ciências Atuariais</option> <option value="Ci&ecirc;ncias Cont&aacute;beis">Ciências Contábeis</option> <option value="Ci&ecirc;ncias Econ&ocirc;micas">Ciências Econômicas</option> <option value="Rela&ccedil;&otilde;es Internacionais">Relações Internacionais</option></select>
+</div></div></div>
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1268720845"><div class="ss-q-title">De qual termo?
+</div>
+</label>
+<input type="text" autocomplete="off" name="entry.1268720845" value="" class="ss-q-short" id="entry_1268720845" dir="auto" aria-label="De qual termo?  " title="">
+<div class="error-message" id="1383106662_errorMessage"></div>
+</div></div></div>
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-select"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_698892183"><div class="ss-q-title">Selecione a principal área onde você pretende aplicar o projeto.
+</div>
+</label>
+<select class="opti" autocomplete="off" name="entry.698892183" id="entry_698892183" aria-label="Selecione a principal área onde você pretende aplicar o projeto.  "><option value=""></option>
+<option value="Ensino">Ensino</option> <option value="Estudo">Estudo</option> <option value="Pesquisa">Pesquisa</option> <option value="Trabalho">Trabalho</option> <option value="Outra">Outra</option></select>
+</div></div></div>
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-select"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_573156317"><div class="ss-q-title">O que mais despertou sua vontade de participar?
+</div>
+</label>
+<select class="opti" autocomplete="off" name="entry.573156317" id="entry_573156317" aria-label="O que mais despertou sua vontade de participar?  "><option value=""></option>
+<option value="Aprimoramento acad&ecirc;mico">Aprimoramento acadêmico</option> <option value="Aprimoramento profissional">Aprimoramento profissional</option> <option value="Curiosidade">Curiosidade</option> <option value="Horas complementares">Horas complementares</option> <option value="Necessidade">Necessidade</option> <option value="Outros motivos">Outros motivos</option></select>
+</div></div></div>
+
+
+<input type="hidden" name="draftResponse" value="[,,&quot;3696903210327481415&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+
+<input type="hidden" name="fvv" value="0">
+
+
+<input type="hidden" name="fbzx" value="3696903210327481415">
+
+</div>
+<div class="ss-item ss-navigate"><table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+<input type="submit" name="submit" value="Inscrever-se" id="ss-submit2" class="jfk-button jfk-button-action ">
+</td>
+</tr></tbody></table></div></ol></form>
+</div>
+
+</div><div class="efetuada" id="efetuada"></div>
+</div>
+<div id="descetelaf">
+<iframe id="tela">
+</iframe></div>
+
+<div style="display: none" id="hideAll"></div>
+
+<script>
+function OpenSel(e){1==e?(
+	document.getElementById("acin").style.bottom="0",
+	document.getElementById("inin").style.bottom="0",
+	document.getElementById("func").style.opacity="0.0",
+	document.getElementById("func").style.filter="alpha(opacity=0)",
+	document.getElementById("marca").style.left="2vmin",
+	document.getElementById("firstel").style.display="none",
+	document.getElementById("circle").style.animationPlayState="running"
+):2==e?(
+	document.getElementById("inscreverg").style.width="0%",
+	document.getElementById("efetuada").style.opacity="1.0",
+	document.getElementById("efetuada").style.filter="alpha(opacity=100)",
+	document.getElementById("efetuada").style.visibility="visible",
+	document.getElementById("efetuada").style.backgroundSize="80%",
+	document.getElementById("ballonin").style.backgroundSize="60%"
+):3==e?(
+	document.getElementById("logo").style.transform="translate(0%,-150%)",
+	document.getElementById("login").style.left="20%",
+	document.getElementById("login").style.right="20%",
+	document.getElementById("login").style.top="15%",
+	document.getElementById("login").style.paddingBottom="25%",
+	document.getElementById("blocklog").style.visibility="visible"
+):4==e?(
+	document.getElementById("logo").style.transform="translate(0%,0%)",
+	document.getElementById("login").style.left="49%",
+	document.getElementById("login").style.paddingBottom="0%",
+	document.getElementById("login").style.right="49%",
+	document.getElementById("login").style.top="-60%",
+	document.getElementById("blocklog").style.visibility="hidden"
+):5==e?(
+	document.getElementById("formlogbgg").style.width="90%",
+	document.getElementById("tela").style.top="0%",
+	document.getElementById("descetelaf").style.visibility="visible",
+	document.getElementById("forat").style.bottom="-100%"
+):6==e?(
+	document.getElementById("forat").style.left="-100%",
+	document.getElementById("inscrever").style.right="0%"	
+):7==e&&(
+	document.getElementById("forat").style.left="0%",
+	document.getElementById("inscrever").style.right="-100%"
+)}
+
+</script>
+
+
+<script>
+$("#loginsb").click(function () { 
+      $("#tela").attr("src", "primeiro/index.html");
+});</script>
+
+</body>
+</html>
