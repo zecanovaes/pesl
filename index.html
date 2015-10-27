@@ -611,7 +611,7 @@ h1 {
 }
 
 .formlogbgg {
-	background:#8DB372;
+	background:#2D7D59;
 	width:0%;
 }
 
@@ -630,7 +630,9 @@ h1 {
 .scroll {
 	overflow-y:scroll;
 	position:absolute;
-	padding:6%;
+	padding-top:9.5%;
+	padding-right:7%;
+	padding-left:7%;
 	left:3%;
 	right:3%;
 	top:1%;
@@ -754,7 +756,7 @@ target="hidden_iframe2" onsubmit="submitted=true;">
 
 <div class="scroll">
 <div id="txt">
-<img src="querop.png" / class="participar">
+<img src="querop.png" class="participar" />
 <h1>*Caso existam dados faltantes, nosso sistema automaticamente eliminará a inscrição.</h1>
 
 <script type="text/javascript">var submitted=false;</script>
@@ -849,7 +851,7 @@ target="hidden_iframe" onsubmit="submitted=true;">
 </div>
 </label>
 <select class="opti" autocomplete="off" name="entry.573156317" id="entry_573156317" aria-label="O que mais despertou sua vontade de participar?  "><option value=""></option>
-<option value="Aprimoramento acad&ecirc;mico">Aprimoramento acadêmico</option> <option value="Aprimoramento profissional">Aprimoramento profissional</option> <option value="Curiosidade">Curiosidade</option> <option value="Horas complementares">Horas complementares</option> <option value="Necessidade">Necessidade</option> <option value="Outros motivos">Outros motivos</option></select>
+<option value="Aprimoramento acad&ecirc;mico">Aprimoramento acadêmico</option> <option value="Aprimoramento profissional">Aprimoramento profissional</option> <option value="Curiosidade">Curiosidade</option> <option value="Gratuidade">Gratuidade</option> <option value="Horas complementares">Horas complementares</option> <option value="Necessidade">Necessidade</option> <option value="Reputa&ccedil;&atilde;o da Unifesp">Reputação da Unifesp</option> <option value="Outros motivos">Outros motivos</option></select>
 </div></div></div>
 
 
@@ -876,7 +878,7 @@ target="hidden_iframe" onsubmit="submitted=true;">
 </iframe></div>
 
 
-<script>
+<script type="text/javascript">
 function OpenSel(e){1==e?(
 	document.getElementById("acin").style.bottom="0",
 	document.getElementById("inin").style.bottom="0",
@@ -916,7 +918,7 @@ function OpenSel(e){1==e?(
 
 </script>
 
-<script>
+<script type="text/javascript">
 $("#loginsb").click(function esquerda() {
     var timer = setTimeout(function() {
 	document.getElementById("forat").style.transform="translate(100%, 0%)";
@@ -928,10 +930,23 @@ $("#loginsb").click(function esquerda() {
 $("#loginsb").click(function () { 
       $("#tela").attr("src", "primeiro/index.html");
 	 document.getElementById("formlogbgg").style.width="90%";
+	 var timer = setTimeout(function() {
+	document.getElementById("inscrever").style.display="none";
+	document.getElementById("forat").style.display="none";
+    }, 5000);
 });
 
  </script>
 
+<script type="text/javascript">
+   document.getElementById("hideAll").style.display = "block";
+ </script> 
 
+<script type="text/javascript">
+window.onload = function() 
+  { document.getElementById("hideAll").style.display = "none"; }
+ </script>
+ 
+<div id="hideAll">&nbsp;</div>
 </body>
 </html>
