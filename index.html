@@ -108,7 +108,7 @@ body {
 }
 
 .inscrever {
-	right:-100%;
+	transform: translate(100%, 0%);
 	background-color:#f26964;
 }
 
@@ -258,7 +258,7 @@ to {
 }
 
 
-.inicio:hover, .inscrever:hover, .segundo:hover, .terceiro:hover, .fundoinicio, .inicio, .in, .ac, .marca, .setesq, .setesq:hover, .linac, .linin, .login, .logo, .logo:hover, .jfk-button2:hover, .jfk-button2, jfk-button:hover, .jfk-button {
+.inicio:hover, .inscrever:hover, .segundo:hover, .terceiro:hover, .fundoinicio, .inicio, .in, .ac, .marca, .setesq, .setesq:hover, .linac, .linin, .login, .logo, .logo:hover, #loginsb:hover, #loginsb, jfk-button:hover, #ss-submit2 {
    -webkit-transition-duration: 0.5s;
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
@@ -290,8 +290,10 @@ to {
 
 .ss-q-short2 {
   font-size: 2.5vw;
-  width:88%;
+  width:89%;
   padding:2%;
+  left:6%;
+  position:absolute;
   outline:none;
 	background-color:transparent;
   border:none;
@@ -386,7 +388,7 @@ to {
     filter: alpha(opacity=00);
 }
 
-.efetuada, .inscreverg, .acin, .inin, .func, .formlog, .formlogbgg{
+.efetuada, .inscreverg, .acin, .inin, .func, #formlog, #formlogbgg{
 	-webkit-transition-duration: 0.5s;
 	-moz-transition-duration: 0.5s;
 	-o-transition-duration: 0.5s;
@@ -444,7 +446,7 @@ to {
   transform: translate(-3%, 0%);
 }
 
-.jfk-button  {
+#ss-submit2  {
 	position:absolute;
 	width:40%;
 	padding:3vmin;
@@ -461,16 +463,16 @@ to {
 	cursor:pointer;
 }
 
-.jfk-button:hover  {
+#ss-submit2:hover  {
 	background: #f05752;
 }
 
-.jfk-button2  {
+#loginsb  {
 	position:absolute;
 	width:5%;
 	height:64%;
 	top:18%;
-	right:1%;
+	left:2%;
 	border:0;
 	background-color:transparent;
 	background-image:url(play.png);
@@ -480,8 +482,8 @@ to {
 	cursor:pointer;
 }
 
-.formlog:hover .jfk-button2 {
-  transform: translate(10%, 0%);
+#formlog:hover #loginsb {
+  transform: translate(-10%, 0%);
 }
 
 h1 {
@@ -593,18 +595,18 @@ h1 {
 	position:absolute;
 }
 
-.formlog, .formlogbgr, .formlogbgg {
+#formlog, #formlogbgr, #formlogbgg {
 	overflow:hidden;
 	position:absolute;
 	left:5%;
 	height:20%;
 	top:40%;
 }
-.formlogbgr {
+#formlogbgr {
 	background:#f26964;
 }
 
-.formlog, .formlogbgr {
+#formlog, #formlogbgr {
 	width:90%;
 }
 
@@ -643,12 +645,12 @@ h1 {
 	left:0;
 	border:0;
 	outline:0;
+	top:0;
 }
 #tela {
-	top:-100%;
+  transform: translate(-100%, 0%);
 }
 #descetelaf {
-	top:0;
 	visibility:hidden;	
 }
 #forat {
@@ -661,19 +663,29 @@ h1 {
 	background-repeat:repeat;
 	background-image:url(bg.png);
 	background-size: 10vw;
+	transform: translate(0%, 0%);
 }
-#tela, #forat, .inscrever {
+#tela, #forat {
 	-webkit-transition-duration: 0.5s;
 	-moz-transition-duration: 0.5s;
 	-o-transition-duration: 0.5s;
 	transition-duration: 0.5s;
-	-webkit-transition-delay: 4s; /* Safari */
-    transition-delay: 4s;
   -webkit-transition-property: all;
   -moz-transition-property:all;
   -o-transition-property: all;
   transition-property: all;
+
 }
+.inscrever {
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+  -webkit-transition-property: all;
+  -moz-transition-property:all;
+  -o-transition-property: all;
+  transition-property: all;
+ }
 </style>
  
 </head>
@@ -698,9 +710,9 @@ h1 {
 <div class="contcad" id="contcad"></div>
 <div class="formlogbgr" id="formlogbgr"></div>
 <div class="formlogbgg" id="formlogbgg"></div>
-<div class="formlog" id="formlog">
+<div id="formlog">
 <iframe name="hidden_iframe2" id="hidden_iframe2"
-style="display:none;" onload="if(submitted) OpenSel(5)"></iframe>
+style="display:none;" onload="if(submitted) esquerda()" ></iframe>
 <form action="https://docs.google.com/forms/d/1mQePk0yD_HNEmdmfqIXQnGvhzA_0iHKEHiM-F8ss8sg/formResponse" method="post"
 target="hidden_iframe2" onsubmit="submitted=true;">
 
@@ -720,7 +732,7 @@ target="hidden_iframe2" onsubmit="submitted=true;">
 <input type="hidden" name="fbzx" value="2514834357131424071">
 
 
-<input type="submit" name="submit" value="" id="loginsb" class="jfk-button2 jfk-button-action ">
+<input type="submit" name="submit" value="" id="loginsb">
 </form></div>
 
 <div class="contmsg" id="contmsg"></div>
@@ -852,7 +864,7 @@ target="hidden_iframe" onsubmit="submitted=true;">
 
 </div>
 <div class="ss-item ss-navigate"><table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
-<input type="submit" name="submit" value="Inscrever-se" id="ss-submit2" class="jfk-button jfk-button-action ">
+<input type="submit" name="submit" value="Inscrever-se" id="ss-submit2">
 </td>
 </tr></tbody></table></div></ol></form>
 </div>
@@ -863,7 +875,6 @@ target="hidden_iframe" onsubmit="submitted=true;">
 <iframe id="tela">
 </iframe></div>
 
-<div style="display: none" id="hideAll"></div>
 
 <script>
 function OpenSel(e){1==e?(
@@ -895,26 +906,32 @@ function OpenSel(e){1==e?(
 	document.getElementById("login").style.right="49%",
 	document.getElementById("login").style.top="-60%",
 	document.getElementById("blocklog").style.visibility="hidden"
-):5==e?(
-	document.getElementById("formlogbgg").style.width="90%",
-	document.getElementById("tela").style.top="0%",
-	document.getElementById("descetelaf").style.visibility="visible",
-	document.getElementById("forat").style.bottom="-100%"
 ):6==e?(
-	document.getElementById("forat").style.left="-100%",
-	document.getElementById("inscrever").style.right="0%"	
+	document.getElementById("forat").style.transform="translate(-100%, 0%)",
+	document.getElementById("inscrever").style.transform="translate(0%, 0%)"
 ):7==e&&(
-	document.getElementById("forat").style.left="0%",
-	document.getElementById("inscrever").style.right="-100%"
+	document.getElementById("forat").style.transform="translate(0%, 0%)",
+	document.getElementById("inscrever").style.transform="translate(100%, 0%)"
 )}
 
 </script>
 
-
 <script>
+$("#loginsb").click(function esquerda() {
+    var timer = setTimeout(function() {
+	document.getElementById("forat").style.transform="translate(100%, 0%)";
+	document.getElementById("descetelaf").style.visibility="visible";
+	document.getElementById("tela").style.transform="translate(0%, 0%)";
+    }, 4000);
+});
+
 $("#loginsb").click(function () { 
       $("#tela").attr("src", "primeiro/index.html");
-});</script>
+	 document.getElementById("formlogbgg").style.width="90%";
+});
+
+ </script>
+
 
 </body>
 </html>
