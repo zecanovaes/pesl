@@ -18,26 +18,67 @@
 #bar2, #bar3{
 	width:100%;
 	height:0%;
+<<<<<<< HEAD
 	background-color:#FFFFFF;
 	background-repeat:repeat;
 	background-image:url(bg.png);
 	background-size: 10vw;
+=======
+>>>>>>> refs/remotes/origin/master
 	position:absolute;
-	animation-name: topo;
+	animation-name:entra;
+    animation-delay: 18s;
+}
+
+@keyframes entra {
+    from {
+    height: 0%;
+}
+   to {
+    height: 30%;
+
+}
+}
+#bar2{ top:0;}
+#bar3{ bottom:0;}
+#bar4{
+	-webkit-box-shadow: 0vmin 0vmin 5vmin -0.5vmin rgba(0,0,0,0.0);
+	-moz-box-shadow: 0vmin 0vmin 5vmin -0.5vmin rgba(0,0,0,0.0);
+	box-shadow: 0px 0vmin 5vmin -0.5vmin rgba(0,0,0,0.0);
+	position:absolute;
+	height:40%;
+	width:100%;
+	background-color:#FFFFFF;
+	top:30%;
+	animation-name: shadow;
 	animation-delay: 18s;
 }
+<<<<<<< HEAD
 #bar2{ top:0; left:0; background-position:left;}
 #bar3{ bottom:0; left:0; background-position:right;}
+=======
+@keyframes shadow {
+from {
+	-webkit-box-shadow: 0vmin 0vmin 5vmin -0.5vmin rgba(0,0,0,0.0);
+	-moz-box-shadow: 0vmin 0vmin 5vmin -0.5vmin rgba(0,0,0,0.0);
+	box-shadow: 0px 0vmin 5vmin -0.5vmin rgba(0,0,0,0.0);
+}
+to {
+	-webkit-box-shadow: 0vmin 0vmin 5vmin -0.5vmin rgba(0,0,0,0.2);
+	-moz-box-shadow: 0vmin 0vmin 5vmin -0.5vmin rgba(0,0,0,0.2);
+	box-shadow: 0px 0vmin 5vmin -0.5vmin rgba(0,0,0,0.2);
+}
+}
+>>>>>>> refs/remotes/origin/master
 #bar1 {
-	background-color:#8DB372;
+	background-color:#2D7D59;
 	width:100%;
-	left:0;
-	bottom:0%;
-	top:0%;
+	left:0%;
+	height:100%;
 	position:absolute;
 	overflow:hidden;
 }
-#bgw, #bar2, #bar3 {
+#bgw, #bar2, #bar3, #bar4 {
 	animation-duration: 1s;
 	animation-iteration-count: 1;
 	animation-direction: normal;
@@ -45,35 +86,46 @@
 	animation-fill-mode:forwards;
 }
 #bar1 {
-	animation-name: changeposition, bar1bg;
-    animation-duration: 1s, 1s;
-    animation-timing-function: ease-in-out, ease-in-out;
-    animation-delay: 7s, 18s;
-	animation-fill-mode:forwards, forwards;
-	animation-iteration-count: 1, 1;
+	animation-name: changeposition, bar1bg, bye;
+    animation-duration: 1s, 1s, 1s;
+    animation-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    animation-delay: 7s, 18s, 23s;
+	animation-fill-mode:forwards, forwards, forwards;
+	animation-iteration-count: 1, 1,1;
 }
 
 @keyframes changeposition {
     from {
     top: 0%;
-    bottom: 0%;
+    height: 100%;
 }
    to {
     top: 30%;
-    bottom: 30%;
+    height: 40%;
 
 }
 }
-#pesl, #unifesp, #bgw, #acessar {
+@keyframes bye {
+    from {
+    left: 0%;
+}
+   to {
+    left: 100%;
+}
+}
+#pesl, #unifesp, #bgw, #curso {
 	background-repeat:no-repeat;
 	background-position:center;
-	background-size:contain;
 	top:7%;
 	bottom:7%;
 	position:absolute;
 	right:7%;
 	left:7%;
 }
+#pesl, #unifesp, #bgw {
+	background-size:contain;
+}
+
 #pesl {
 	background-image:url(pesl.png);
 	transform: translate(0%, -120%);
@@ -95,10 +147,11 @@
 	animation-fill-mode:forwards, forwards;
 	animation-iteration-count: 1, 1;
 }
-#acessar {
-	background-image:url(acessar.png);
+#curso {
+	background-image:url(../titcurso.png);
+	background-size:100%;
 	transform: translate(0%, -120%);
-	animation-name: acessar;
+	animation-name: curso;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-delay: 18s;
@@ -111,10 +164,36 @@
 	animation-name: bgw;
 	animation-delay: 10s;
 }
+#modulo1, #modulo2, #modulo3, #modulo4, #modulo5, #modulo6 {
+	position:absolute;
+	width:33.34%;
+	height:100%;
+	top:0;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+#modulo1, #modulo4 {
+	left:0;
+}
+#modulo1, #modulo6 {
+	background-color:#358F65;
+}
+#modulo2, #modulo5 {
+	left:33.33%;
+	background-color:#2D7D59;
+}
+#modulo3, #modulo6 {
+	right:0;
+}
+#modulo3, #modulo4 {
+	background-color:#246B4D;
+}
+#modulo1, #modulo2, #modulo3 {background-position:top;background-image:ul(../modulo1.png);}
+#modulo4, #modulo5, #modulo6 {background-position:bottom;background-image:ul(../modulo4.png);}
 
 @keyframes bar1bg {
     from {
-	background-color:#8DB372;
+	background-color:#2D7D59;
 }
    to {
 	background-color:#2C4639;
@@ -153,7 +232,7 @@
 	transform: translate(0%, 120%);
 }
 }
-@keyframes acessar {
+@keyframes curso {
     from {
 	transform: translate(0%, -120%);
 	}
@@ -170,6 +249,7 @@
 }
 }
 
+<<<<<<< HEAD
 @keyframes topo {
     from {
 	height: 0%;
@@ -178,6 +258,8 @@
 	height: 30%;
 }
 }
+=======
+>>>>>>> refs/remotes/origin/master
 </style>
 <body>
 
@@ -187,8 +269,17 @@
   <source src="bell.mp3" type="audio/mp3" />
 </audio>
 
-<div id="bar2"></div><div id="bar3"></div>
-<div id="bar1"><div id="bgw"></div><div id="pesl"></div><div id="unifesp"></div><a href="#"><div id="acessar"></div></a>
+<div id="bar2">
+<div id="modulo1"></div>
+<div id="modulo2"></div>
+<div id="modulo3"></div>
+</div><div id="bar3">
+<div id="modulo4"></div>
+<div id="modulo5"></div>
+<div id="modulo6"></div>
+</div>
+<div id="bar4"></div>
+<div id="bar1"><div id="bgw"></div><div id="pesl"></div><div id="unifesp"></div><div id="curso"></div>
 </div>
 </div>
 </body>
